@@ -5,25 +5,34 @@
     <meta charset="utf-8">
 </head> 
 <body>
-    <h1>JavaScript</h1>
+    <h1><a href="#">JavaScript</a></h1>
     <input id="night_day" type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night'){
-        target.style.backgroundColor='black';
-        target.style.color='white';
-        this.value = 'day';
-    }
-    else{
-        target.style.backgroundColor='white';
-        target.style.color='black';
-        this.value = 'night';
-    }
-    "
-    >
+        var target = document.querySelector('body');
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        if(this.value === 'night'){
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            this.value = 'day';
+            while(i < alist.length){
+                alist[i].style.color='powderblue';
+                i = i + 1 ;
+            }
+        }
+        else{
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            this.value = 'night';
+            while(i < alist.length){
+                alist[i].style.color='blue';
+                i = i + 1 ;
+            }
+        }
+        ">
     <ol>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
     </ol>
     <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum quaerat velit beatae in dolorem aspernatur! Atque ea iste, cum mollitia beatae similique eos! Atque, rerum. Dignissimos commodi tempora labore placeat?
     Ipsum autem cupiditate laudantium sapiente impedit! Quisquam inventore, rerum sunt culpa, temporibus amet ratione harum voluptatem architecto iusto eligendi nam rem dolore. Nihil quis ducimus tempore dolorum in. Consequuntur, quas.
