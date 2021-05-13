@@ -3,32 +3,37 @@
     <head>
     <title>신나는 자바실습</title>
     <meta charset="utf-8">
+    <script>
+        /*this는 이벤트 속성을 가진 태그 자신을 가리킴, 독립된 함수로 지정했을 시 작동x
+        이를 해결하기 위해 this가 사용될 자리에 매개변수-self-를 지정한다.*/
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            var alist = document.querySelectorAll('a'); /*document 안의 모든 a태그를 리스트*/
+            var i = 0;
+            if(self.value === 'night'){
+                target.style.backgroundColor='black';
+                target.style.color='white';
+                self.value = 'day';
+                while(i < alist.length){
+                    alist[i].style.color='powderblue';
+                    i = i + 1 ;
+                }
+            }
+            else{
+                target.style.backgroundColor='white';
+                target.style.color='black';
+                self.value = 'night';
+                while(i < alist.length){
+                    alist[i].style.color='blue';
+                    i = i + 1 ;
+                }
+            }
+         }
+    </script>
 </head> 
 <body>
     <h1><a href="#">JavaScript</a></h1>
-    <input id="night_day" type="button" value="night" onclick="
-        var target = document.querySelector('body');
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        if(this.value === 'night'){
-            target.style.backgroundColor='black';
-            target.style.color='white';
-            this.value = 'day';
-            while(i < alist.length){
-                alist[i].style.color='powderblue';
-                i = i + 1 ;
-            }
-        }
-        else{
-            target.style.backgroundColor='white';
-            target.style.color='black';
-            this.value = 'night';
-            while(i < alist.length){
-                alist[i].style.color='blue';
-                i = i + 1 ;
-            }
-        }
-        ">
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this);/*매개변수 self 자리에 this가 인자로서 들어감*/">
     <ol>
         <li><a href="#">HTML</a></li>
         <li><a href="#">CSS</a></li>
