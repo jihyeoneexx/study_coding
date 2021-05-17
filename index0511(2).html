@@ -3,44 +3,7 @@
     <head>
     <title>신나는 자바실습</title>
     <meta charset="utf-8">
-    <script>
-        function linksSetColor(color){
-            var alist = document.querySelectorAll('a'); /*document 안의 모든 a태그를 리스트*/
-            var i = 0;
-            while(i < alist.length){
-                alist[i].style.color= color;
-                i = i + 1 ;
-            }
-        }
-
-        function bodySetColor(color){
-            document.querySelector('body').style.color=color;
-        }
-
-        function backgroundSetColor(color){
-            document.querySelector('body').style.backgroundColor=color;
-        }
-        /*this는 이벤트 속성을 가진 태그 자신을 가리킴, 독립된 함수로 지정했을 시 작동x
-        이를 해결하기 위해 this가 사용될 자리에 매개변수-self-를 지정한다.*/
-        function nightDayHandler(self){
-            var target = document.querySelector('body');
-
-            if(self.value === 'night'){
-                backgroundSetColor('black');
-                bodySetColor('white');
-                self.value = 'day';
-
-                linksSetColor('powderblue');
-                }
-            else{
-                backgroundSetColor('white');
-                bodySetColor('black');
-                self.value = 'night';
-
-                linksSetColor('blue');
-            }
-        }
-    </script>
+       <script src="colors.js"></script>
 </head> 
 <body>
     <h1><a href="#">JavaScript</a></h1>
